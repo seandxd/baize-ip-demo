@@ -10,9 +10,18 @@ class ComfyUIClient:
     def __init__(self, server_url="http://127.0.0.1:8188"):
         self.server_url = server_url
         self.workflow_path = os.path.join(
-            os.path.dirname(__file__), 
+            os.path.dirname(__file__),
             "workflow.json"
         )
+        self.server_online = self._check_server()
+
+    def _check_server(self):
+        """快速检查 ComfyUI 服务是否存活（避免启动卡死）"""
+        try:
+            r = requests.get(f"{self.server_url}/", timeout=2)
+            return r.status_code == 200
+        except Exception:
+            return False
     
     def load_workflow(self):
         with open(self.workflow_path, 'r', encoding='utf-8') as f:
@@ -27,6 +36,11 @@ class ComfyUIClient:
         return response.json()
     
     def generate_image(self, positive_prompt, seed=None, width=512, height=512):
+        # ComfyUI 未运行时直接降级为模拟输出，避免卡死
+        if not self.server_online:
+            print("ComfyUI server not online, using simulated output")
+            return self._simulate_image()
+
         try:
             workflow = self.load_workflow()
             print("Workflow loaded successfully")

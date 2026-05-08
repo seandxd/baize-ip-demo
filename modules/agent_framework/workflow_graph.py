@@ -8,12 +8,16 @@ from modules.rag_engine.knowledge_base import CulturalIPKnowledgeBase
 class BusinessAgentWorkflow:
     def __init__(self, rag_engine=None, api_key=None):
         self.rag_engine = rag_engine
-        # 默认走DeepSeek，也可通过.env切换为硅基流动或其他兼容API
+        # ChatOpenAI 只认 OPENAI_API_KEY 环境变量
+        deepseek_key = os.getenv("DEEPSEEK_API_KEY") or api_key or ""
+        if deepseek_key:
+            os.environ["OPENAI_API_KEY"] = deepseek_key
+        if not os.getenv("OPENAI_BASE_URL"):
+            os.environ["OPENAI_BASE_URL"] = "https://api.deepseek.com/v1"
         self.llm = ChatOpenAI(
             model=os.getenv("LLM_MODEL", "deepseek-chat"),
             temperature=0.7,
-            openai_api_key=os.getenv("DEEPSEEK_API_KEY", os.getenv("OPENAI_API_KEY", "")),
-            openai_api_base=os.getenv("OPENAI_BASE_URL", "https://api.deepseek.com/v1")
+            request_timeout=30
         )
 
     def run(self, query: str) -> str:
