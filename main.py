@@ -1,9 +1,9 @@
 import os
-# 设置 Gradio 临时目录为短路径，避免 Windows 路径过长错误
-os.environ["GRADIO_TEMP_DIR"] = r"/tmp/gradio_temp"
-# 确保目录存在
-if not os.path.exists(r"/tmp/gradio_temp"):
-    os.makedirs(r"/tmp/gradio_temp")
+import sys
+# 设置 Gradio 临时目录
+GRADIO_TEMP = "/tmp/gradio_temp" if sys.platform != "win32" else r"C:\Users\seanjob\.hermes\gradio_temp"
+os.environ["GRADIO_TEMP_DIR"] = GRADIO_TEMP
+os.makedirs(GRADIO_TEMP, exist_ok=True)
 
 import gradio as gr
 from pages import page_aigc, page_rag, page_agent

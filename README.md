@@ -59,8 +59,16 @@ pip install -r requirements.txt
 
 ### 3. 配置 API 密钥
 复制 `.env.example` 为 `.env`，填入你的 API 密钥：
+
+**推荐：DeepSeek**
 ```
-OPENAI_API_KEY=sk-xxxxxx
+DEEPSEEK_API_KEY=sk-你的DeepSeek密钥
+LLM_MODEL=deepseek-chat
+```
+
+**或：硅基流动**
+```
+OPENAI_API_KEY=sk-你的硅基流动密钥
 OPENAI_BASE_URL=https://api.siliconflow.cn/v1
 LLM_MODEL=Qwen/Qwen2.5-7B-Instruct
 ```
