@@ -1,16 +1,29 @@
+# 白泽造物 IP 推演室 .gitignore
+
 # 虚拟环境
 venv/
-env/
-.venv
+.venv/
 
-# Python 缓存
-__pycache__/
-*.pyc
-*.pyo
+# FAISS 索引（运行时重建）
+cultural_ip_store/
 
-# 敏感配置
+# Gradio 临时文件
+gradio_temp/
+/tmp/gradio_temp/
+
+# 环境变量
 .env
 
-# 系统文件
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
 .DS_Store
 Thumbs.db

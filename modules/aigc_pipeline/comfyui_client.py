@@ -101,20 +101,20 @@ class ComfyUIClient:
     def generate_with_cultural_style(self, ip_element, style="traditional"):
         # English prompt templates for cultural IPs
         prompt_map = {
-            "Dunhuang Flying Apsaras": {
-                "traditional": "Dunhuang Flying Apsaras, Tang Dynasty style, flowing ribbons, auspicious clouds, playing pipa backwards, mural texture, mineral pigment colors, elegant and antique, exquisite lines, prosperous Tang atmosphere",
-                "modern": "Dunhuang Flying Apsaras, cyberpunk style, neon lights, futuristic technology, digital art, high saturation colors, mechanical wings, holographic projection, city background",
-                "fusion": "Dunhuang Flying Apsaras merged with surrealism, fluid forms, light and shadow interplay, deconstruction of cultural symbols, transparent materials, dreamy atmosphere, colorful, abstract expression"
+            "Chong Xiao Green IP": {
+                "traditional": "Cute cartoon green insect character, Chinese cultural mascot, traditional Chinese painting style, gentle brushstrokes, warm color palette, educational friendly, storybook illustration, historical storytelling vibe",
+                "modern": "Chong Xiao Green character, modern cute mascot design, vibrant colors, flat vector illustration, social media friendly, clean lines, youthful energy, digital sticker style",
+                "fusion": "Chong Xiao Green character fusion with traditional Chinese elements, watercolor and digital mixed media, poetic atmosphere, historical storytelling, cultural heritage, dreamy aesthetic"
             },
-            "Suzhou Embroidery": {
-                "traditional": "Suzhou embroidery, Jiangnan water town, flowers, birds, fish, insects, silk luster, delicate stitching, gongbi style, soft colors, elegant and exquisite, intangible cultural heritage",
-                "modern": "Suzhou embroidery elements combined with modern design, geometric patterns, bright colors, abstract textures, digital printing, fashion sense, installation art",
-                "fusion": "Suzhou embroidery merged with light and shadow art, flowing silk, combination of virtual and real, three-dimensional embroidery, interactive projection, cultural innovation, visual impact"
+            "Touch History": {
+                "traditional": "Chinese old street scene, historical architecture, traditional alleyway, warm nostalgia, morning light through windows, antique storefronts, stone pathways, cultural heritage atmosphere",
+                "modern": "Historical street reimagined, augmented reality overlay, digital information layers, interactive museum experience, modern and ancient contrast, immersive cultural exhibit",
+                "fusion": "Old street memory merged with digital art, time layers visualization, past and present coexisting, translucent historical figures, cultural memory visualization, poetic nostalgia"
             },
-            "Kunqu Opera": {
-                "traditional": "Kunqu opera, Peony Pavilion, Du Liniang, water sleeves dance, opera makeup, gorgeous costumes, stage setting, classical garden, poetic and beautiful",
-                "modern": "Kunqu opera and modern stage art, light and shadow interplay, abstract space, dramatic tension, avant-garde design, multimedia integration, youthful expression",
-                "fusion": "Kunqu opera merged with digital art, particle effects, motion capture, reconstruction of cultural symbols, immersive experience, surreal atmosphere"
+            "Intangible Heritage": {
+                "traditional": "Traditional Chinese craft, artisan hands at work, silk embroidery, paper cutting, pottery making, cultural heritage, meticulous details, warm workshop atmosphere, generational craft",
+                "modern": "Traditional craft reimagined in digital age, artisan tools with modern technology, fusion of old and new, clean minimalist composition, cultural innovation",
+                "fusion": "Chinese intangible cultural heritage elements, abstract cultural symbols, flowing forms, traditional patterns reimagined, cultural DNA visualization, artistic interpretation of heritage"
             },
         }
         

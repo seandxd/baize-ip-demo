@@ -51,6 +51,6 @@ class CulturalIPKnowledgeBase:
         docs = self.search(query, k)
         context_parts = []
         for i, doc in enumerate(docs):
-            gene_marker = f"[视袭君看·文化基因片段 {i+1}]"
+            gene_marker = f"[白泽造物·在地文化基因片段 {i+1}]"
             context_parts.append(f"{gene_marker}\n{doc.page_content}")
         return "\n\n".join(context_parts)

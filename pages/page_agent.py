@@ -23,8 +23,8 @@ def generate_report(query):
 
 def render():
     with gr.Blocks() as page:
-        gr.Markdown("## 📈 智能商业决策")
-        gr.Markdown("基于Agent框架实现商业逻辑自动化闭环")
+        gr.Markdown("## 📈 白泽造物·IP活化智能决策")
+        gr.Markdown("基于AI Agent，自动输出在地文化IP商业化方案")
         
         query_input = gr.Textbox(
             label="输入商业问题",
@@ -42,10 +42,10 @@ def render():
         
         gr.Examples(
             examples=[
-                ["如何将敦煌飞天IP开发成文旅产品？"],
-                ["苏绣非遗如何商业化变现？"],
-                ["昆曲如何吸引Z世代年轻人？"],
-                ["故宫文创的成功经验如何复制？"]
+                ["虫小绿IP如何在社区场景做商业化？"],
+                ["老街历史文化如何转化成研学课程？"],
+                ["非遗项目怎么用AI降本增效？"],
+                ["社区街道文化IP怎么做年度运营规划？"]
             ],
             inputs=query_input
         )

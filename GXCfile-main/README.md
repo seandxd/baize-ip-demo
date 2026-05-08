@@ -1,2 +1,0 @@
-# GXCfile
-Some small projects

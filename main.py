@@ -1,9 +1,9 @@
 import os
 # 设置 Gradio 临时目录为短路径，避免 Windows 路径过长错误
-os.environ["GRADIO_TEMP_DIR"] = r"D:\gradio_temp"
+os.environ["GRADIO_TEMP_DIR"] = r"/tmp/gradio_temp"
 # 确保目录存在
-if not os.path.exists(r"D:\gradio_temp"):
-    os.makedirs(r"D:\gradio_temp")
+if not os.path.exists(r"/tmp/gradio_temp"):
+    os.makedirs(r"/tmp/gradio_temp")
 
 import gradio as gr
 from pages import page_aigc, page_rag, page_agent
@@ -11,9 +11,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-with gr.Blocks(title="文化+科技+艺术融合Demo", theme=gr.themes.Soft()) as demo:
-    gr.Markdown("# 🎨 GXC · 文化科技实验室")
-    gr.Markdown("### AI与文化IP深度融合的三模块演示")
+with gr.Blocks(title="白泽造物·文化IP数智活化推演室", theme=gr.themes.Soft()) as demo:
+    gr.Markdown("# 🎨 白泽造物 · 文化IP数智活化推演室")
+    gr.Markdown("### AI在地文化IP创作与商业决策三合一平台")
     
     with gr.Tabs():
         with gr.TabItem("⚙️ AIGC管线"):

@@ -11,12 +11,12 @@ def generate(ip_element, style):
 
 def render():
     with gr.Blocks() as page:
-        gr.Markdown("## ⚙️ AIGC自动化管线")
-        gr.Markdown("基于ComfyUI的AI图像生成管线，注入文化IP基因")
+        gr.Markdown("## ⚙️ AI文化IP视觉生成管线")
+        gr.Markdown("基于ComfyUI，为在地文化IP定制专属视觉风格")
         
         with gr.Row():
             with gr.Column():
-                ip_input = gr.Textbox(label="文化IP元素", placeholder="例如：敦煌飞天、苏绣、昆曲...")
+                ip_input = gr.Textbox(label="在地文化IP元素", placeholder="例如：虫小绿、老街记忆、非遗技艺...")
                 style_radio = gr.Radio(
                     choices=["traditional", "modern", "fusion"],
                     label="艺术风格",
@@ -36,9 +36,9 @@ def render():
         
         gr.Examples(
             examples=[
-                ["敦煌飞天", "traditional"],
-                ["苏绣", "modern"],
-                ["昆曲牡丹亭", "fusion"]
+                ["虫小绿IP形象", "traditional"],
+                ["老街记忆·触摸身边的历史", "modern"],
+                ["非遗技艺·指尖传承", "fusion"]
             ],
             inputs=[ip_input, style_radio]
         )
